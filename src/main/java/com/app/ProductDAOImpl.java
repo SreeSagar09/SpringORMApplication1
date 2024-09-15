@@ -14,7 +14,8 @@ public class ProductDAOImpl implements ProductDAO{
 
 	@Override
 	public List<Product> getAllProducts() {
-		List<Product> productList = hibernateTemplate.findByExample(new Product());
+		Product product = new Product();
+		List<Product> productList = hibernateTemplate.findByExample(product);
 		return productList;
 	}
 
